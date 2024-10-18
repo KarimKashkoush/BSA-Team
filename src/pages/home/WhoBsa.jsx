@@ -18,7 +18,7 @@ import slide4 from "../../assets/images/slide4.jpg"
 import slide11 from "../../assets/images/slide11.jpg"
 import slide22 from "../../assets/images/slide22.jpg"
 import slide33 from "../../assets/images/slide33.jpg"
-import slide44 from "../../assets/images/slide33.jpg"
+import slide44 from "../../assets/images/slide44.jpg"
 
 export default function WhoBsa() {
       return (

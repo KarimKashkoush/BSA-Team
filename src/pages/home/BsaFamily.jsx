@@ -6,7 +6,7 @@ export default function BsaFamily() {
                   <section className="section-header">
                         <h2>BSA Family</h2>
                   </section>
-                  <img src={family} alt="" />
+                  <img src={family} alt="image" />
             </section>
       )
 }

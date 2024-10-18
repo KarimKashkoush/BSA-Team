@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --p-100: 100px;
+  --p-50: 50px;
+  --main-color: #3492E0;
+  --w-color: #fff;
+  --b-color: #000;
+
+  --transition-3: 0.3s ease all;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: "Cairo", sans-serif;
+}
+
+.container {
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+@media (min-width: 786px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 991px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1199px) {
+  .container {
+    width: 1150px;
+  }
+}
+
+input {
+  outline: none;
+  border: 1px solid #00000088;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+
+.section-header {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 30px;
+    position: relative;
+    color: var(--main-color);
+    width: fit-content;
+    margin: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--main-color);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--main-color);
+    }
+  }
+}
+
+.none {
+  display: none;
+}

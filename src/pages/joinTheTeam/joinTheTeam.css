@@ -1,0 +1,53 @@
+.form {
+      max-width: 600px;
+      margin: auto;
+
+      form {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .form-control {
+                  width: calc(50% - 10px);
+
+                  input {
+                        width: 100%;
+                        
+                        &:focus {
+                              border: 1px solid #3492E0;
+                        }
+                  }
+
+                  span {
+                        display: block;
+                        color: #ff0000;
+                        margin-top: 3px;
+                  }
+            }
+
+            button {
+                  background-color: #3492E0;
+                  border-radius: 10px;
+                  color: #fff;
+                  padding: 10px 15px;
+                  font-size: 18px;
+                  font-weight: 700;
+                  width: 100%;
+            }
+      }
+
+      @media (max-width: 786px) {
+            form {
+                  .form-control {
+                        width: 100%;
+                        span {
+                              text-align: center;
+                        }
+                  }
+            }
+      }
+}

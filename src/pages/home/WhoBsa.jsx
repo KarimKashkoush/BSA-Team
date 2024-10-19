@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 
 import slide1 from "../../assets/images/slide1.jpg"
@@ -27,7 +27,10 @@ export default function WhoBsa() {
                         <h2>Who Bsa Team</h2>
                   </section>
                   <section className="max-width">
-                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                        <Swiper navigation={true}
+                              autoplay={{ delay: 2000 }} // السلايد يتغير كل 3 ثواني
+                              modules={[Navigation, Autoplay]}
+                              className="mySwiper">
                               <SwiperSlide><img src={slide1} alt="slide-image" /></SwiperSlide>
                               <SwiperSlide><img src={slide2} alt="slide-image" /></SwiperSlide>
                               <SwiperSlide><img src={slide3} alt="slide-image" /></SwiperSlide>
@@ -35,7 +38,10 @@ export default function WhoBsa() {
                         </Swiper>
                   </section>
                   <section className="min-width">
-                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                        <Swiper navigation={true}
+                              autoplay={{ delay: 2000 }} // السلايد يتغير كل 3 ثواني
+                              modules={[Navigation, Autoplay]}
+                              className="mySwiper">
                               <SwiperSlide><img src={slide11} alt="slide-image" /></SwiperSlide>
                               <SwiperSlide><img src={slide22} alt="slide-image" /></SwiperSlide>
                               <SwiperSlide><img src={slide33} alt="slide-image" /></SwiperSlide>

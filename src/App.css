@@ -48,13 +48,17 @@ body {
   }
 }
 
-input {
+input,
+textarea {
   outline: none;
   border: 1px solid #00000088;
   padding: 10px 15px;
   border-radius: 10px;
 }
 
+textarea {
+  resize: none;
+}
 
 .section-header {
   display: block;

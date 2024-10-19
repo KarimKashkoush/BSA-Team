@@ -6,6 +6,7 @@ import free from "../../assets/images/free-1.jpg"
 import hr from "../../assets/images/hr.jpg"
 import pr from "../../assets/images/pr-fr.jpg"
 import design from "../../assets/images/design.jpg"
+import logictic from "../../assets/images/logistic.jpg"
 export default function Board() {
       return (
             <section className="board">
@@ -71,6 +72,13 @@ export default function Board() {
                                           <section className="text">
                                                 <h2>Mohamed Ghrabawy</h2>
                                                 <p>Design Leader</p>
+                                          </section>
+                                    </section>
+                                    <section className="box">
+                                          <img src={logictic} alt="img" />
+                                          <section className="text">
+                                                <h2>Karim Mohamed Kashkoush</h2>
+                                                <p>Logistic Leader</p>
                                           </section>
                                     </section>
                               </section>

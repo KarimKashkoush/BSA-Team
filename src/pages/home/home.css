@@ -1,10 +1,12 @@
 .landing {
+      background-color: var(--bg-color);
       height: 100vh;
       overflow: hidden;
       position: sticky;
       top: 0;
       left: 0;
       z-index: -1;
+
       img {
             height: 100%;
             width: 100%;
@@ -19,16 +21,16 @@
 
 .about {
       padding-block: var(--p-100);
-      border-bottom: 1px solid #0087cfb5;
-      background-color: var(--w-color);
-      
+      border-bottom: var(--border-bottom);
+      background-color: var(--bg-color);
+
       .container {
             .content {
                   display: flex;
                   justify-content: space-between;
                   gap: 30px;
                   align-items: center;
-                  
+
                   .image,
                   .text {
                         flex: 1;
@@ -38,7 +40,7 @@
                         display: flex;
                         justify-content: center;
                   }
-                  
+
                   img {
                         width: 300px;
                         max-width: 100%;
@@ -52,17 +54,18 @@
                         color: var(--main-color);
                         margin-bottom: 15px;
                   }
-                  
+
                   p {
                         line-height: 1.6;
                         font-size: 18px;
+                        color: var(--sub-text-color);
                   }
             }
 
             @media (max-width: 786px) {
                   .content {
                         flex-direction: column;
-                        
+
                         .text {
                               text-align: center;
                         }
@@ -73,8 +76,8 @@
 
 .board {
       padding-block: var(--p-50);
-      border-bottom: 1px solid #0087cfb5;
-      background-color: var(--w-color);
+      border-bottom: var(--border-bottom);
+      background-color: var(--bg-color);
 
       .leader {
             display: flex;
@@ -91,7 +94,7 @@
             max-width: 100%;
             padding: 25px;
             border-radius: 15px;
-            background-color: #0087cfb5;
+            background-color: var(--bg-sub-color);
             overflow: hidden;
             box-shadow: rgba(30, 29, 29, 0.763) 0px 2px 8px 0px;
 
@@ -112,11 +115,13 @@
                   h2 {
                         font-weight: 700;
                         font-size: 18px;
+                        color: var(--w-color);
                   }
 
                   p {
                         font-weight: 700;
                         font-size: 16px;
+                        color: var(--w-color);
                   }
             }
       }
@@ -146,9 +151,9 @@
 }
 
 .bsa-family {
-      background-color: var(--w-color);
+      background-color: var(--bg-color);
       padding-block: var(--p-50);
-      border-bottom: 1px solid #0087cfb5;
+      border-bottom: var(--border-bottom);
       position: sticky;
       top: 0;
       left: 0;
@@ -158,8 +163,8 @@
 
 .who-bsa {
       padding-block: var(--p-50);
-      border-bottom: 1px solid #0087cfb5;
-      background-color: var(--w-color);
+      border-bottom: var(--border-bottom);
+      background-color: var(--bg-color);
 
       @media (max-width: 786px) {
             .max-width {
@@ -183,9 +188,9 @@
 }
 
 .sponsers {
-      background-color: var(--w-color);
+      background-color: var(--bg-color);
       padding-block: var(--p-50);
-      border-bottom: 1px solid #0087cfb5;
+      border-bottom: var(--border-bottom);
 
       .swiper-slide {
             height: 120px;
@@ -206,8 +211,8 @@
 
 .contactus {
       padding-block: var(--p-50);
-      border-bottom: 1px solid #0087cfb5;
-      background-color: var(--w-color);
+      border-bottom: var(--border-bottom);
+      background-color: var(--bg-color);
 
       .container {
             display: flex;
@@ -241,7 +246,7 @@
                         textarea {
                               width: 100%;
                               border-radius: 15px;
-                              border-color: var(--main-color);
+                              border: var(--border-bottom);
                         }
 
                         textarea {
@@ -250,12 +255,12 @@
                   }
 
                   button {
-                        background-color: var(--main-color);
+                        background-color: var(--bg-sub-color);
                         padding: 15px;
                         border-radius: 15px;
-                        color: var(--w-color);
                         font-size: 18px;
                         font-weight: 700;
+                        color: var(--main-color);
                   }
             }
       }

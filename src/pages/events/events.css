@@ -1,0 +1,128 @@
+.events {
+  background-color: var(--bg-color);
+  padding-block: 100px 50px;
+
+  .container {
+    .boxs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+
+      .box {
+        border-radius: 15px;
+        background-color: var(--bg-sub-color);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
+        overflow: hidden;
+        transition: var(--transition-3);
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          padding: 15px;
+          color: var(--w-color);
+
+          section {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            h3 {
+              font-weight: 700;
+              font-size: 22px;
+            }
+
+            p {
+              line-height: 1.6;
+            }
+          }
+
+          .links {
+            display: flex;
+            justify-content: space-between;
+
+            a {
+              cursor: pointer;
+              width: fit-content;
+              font-weight: 700;
+              padding: 10px;
+              color: var(--bg-sub-color);
+              border-radius: 5px;
+              background-color: var(--w-color);
+              transition: var(--transition-3);
+              display: flex;
+              gap: 5px;
+              align-items: center;
+
+              &:first-child {
+                svg {
+                  transform: rotate(-30deg);
+                }
+              }
+
+              &:hover {
+                transform: scale(1.1, 1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.scientific-day-form {
+  background-color: var(--bg-color);
+  padding-block: 100px 50px;
+
+  .container {
+    form {
+      .inputs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 30px;
+        justify-content: center;
+
+        .input-control {
+          label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--main-color);
+          }
+
+          input,
+          select {
+            display: block;
+            width: 100%;
+            border: 1px solid var(--main-color);
+            outline: none;
+            margin-bottom: 3px;
+            border-radius: 5px;
+          }
+
+          span {
+            color: #ff253a;
+          }
+
+          .hidden {
+            display: none;
+          }
+        }
+      }
+
+      button {
+        display: block;
+        margin-top: 50px;
+        width: 100%;
+        background-color: var(--bg-sub-color);
+        color: var(--w-color);
+        padding: 15px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

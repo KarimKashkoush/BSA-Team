@@ -1,7 +1,7 @@
 import './loading.css'
-export default function Loading() {
+export default function Loading( {theme} ) {
       return (
-            <section className='loading'>
+            <section className={`loading ${theme}`}>
                   <span></span>
             </section>
       )

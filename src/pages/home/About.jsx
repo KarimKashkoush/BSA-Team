@@ -8,7 +8,7 @@ export default function About() {
                               <h2>About</h2>
                         </section>
                         <section className="content">
-                              <section className="image">
+                              <section className="image" data-aos="zoom-in-up">
                                     <img src={logo} alt="logo-image" />
                               </section>
                               <section className="text">

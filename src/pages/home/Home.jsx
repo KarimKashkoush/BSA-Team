@@ -8,12 +8,14 @@ import WhoBsa from "./WhoBsa"
 import Sponsers from "./Sponsers"
 import ContactUs from "./ContactUs"
 import Footer from '../../components/footer/Footer'
+import ScrollTop from '../../components/scrollTop/ScrollTop'
 
 export default function Home() {
       
 
       return (
             <section className={'home'}>
+                  <ScrollTop />
                   <Landing />
                   <About />
                   <WhoBsa />

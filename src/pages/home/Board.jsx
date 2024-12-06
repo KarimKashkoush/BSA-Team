@@ -18,14 +18,14 @@ export default function Board() {
                         </section>
                         <section className="content">
                               <section className="leader">
-                                    <section className="box leader-box">
+                                    <section className="box leader-box" data-aos="zoom-in-up">
                                           <img src={leader} alt="img" />
                                           <section className="text">
                                                 <h2>Mohammad Gamal Almazahy</h2>
                                                 <p>Team Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box leader-box">
+                                    <section className="box leader-box" data-aos="zoom-in-up">
                                           <img src={vice} alt="img" />
                                           <section className="text">
                                                 <h2>Mohamed Yasser Elnagar</h2>
@@ -34,63 +34,63 @@ export default function Board() {
                                     </section>
                               </section>
                               <section className="boxs">
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={media} alt="img" />
                                           <section className="text">
                                                 <h2>Badr Esam Elsadany</h2>
                                                 <p>Media Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={marketing} alt="img" />
                                           <section className="text">
                                                 <h2>Nada Elsayed</h2>
                                                 <p>Marketing Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={free} alt="img" />
                                           <section className="text">
                                                 <h2>Shaza Bedir</h2>
                                                 <p>Free Member</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={hr} alt="img" />
                                           <section className="text">
                                                 <h2>Mohamed Gamel AboEllil</h2>
                                                 <p>HR Director Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={pr} alt="img" />
                                           <section className="text">
                                                 <h2>Nour Eldin Montaser</h2>
                                                 <p>PR / FR Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={design} alt="img" />
                                           <section className="text">
                                                 <h2>Mohamed Ghrabawy</h2>
                                                 <p>Design Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={logictic} alt="img" />
                                           <section className="text">
                                                 <h2>Karim Mohamed Kashkoush</h2>
                                                 <p>Logistic Leader</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={freemember} alt="img" />
                                           <section className="text">
                                                 <h2>Hla Sherif</h2>
                                                 <p>Free Member</p>
                                           </section>
                                     </section>
-                                    <section className="box">
+                                    <section className="box" data-aos="zoom-in-up">
                                           <img src={Scientific} alt="img" />
                                           <section className="text">
                                                 <h2>Norhan Khalid Mohamed</h2>

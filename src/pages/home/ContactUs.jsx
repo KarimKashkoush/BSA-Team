@@ -7,7 +7,7 @@ export default function ContactUs() {
                         <h2>Contact Us</h2>
                   </section>
                   <section className="container">
-                        <section className="image">
+                        <section className="image" data-aos="zoom-in-up">
                               <Lottie animationData={contact} className="animation" />
                         </section>
                         <form>

@@ -15,7 +15,7 @@ export default function Footer() {
                   <section className="footer">
                         <section className="container">
                               <section className="footer-content">
-                                    <section className="image">
+                                    <section className="image" data-aos="zoom-in-up">
                                           <img src={logo} alt="logo" />
                                     </section>
                                     <section className="boxs">

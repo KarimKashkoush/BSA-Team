@@ -22,7 +22,7 @@ export default function Sponsers() {
                         <h2>Partners</h2>
                   </section>
                   <section className="container">
-                        <section className="image">
+                        <section className="image" data-aos="zoom-in-up">
                               <img src="https://ebmes.com/images/logo.svg" alt="img" />
                         </section>
                   </section>

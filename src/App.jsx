@@ -9,9 +9,18 @@ import Loading from "./pages/loading/Loading";
 import Events from "./pages/events/Events";
 import ScientificDayForm from "./pages/events/scientificDayForm";
 import { useSelector } from "react-redux"
+import AOS from "aos";
+
 function App() {
   const theme = useSelector((state) => state.themeSlice.theme);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, 
+      once: false, 
+    });
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       {loading ? (
-        <Loading theme={theme}/>
+        <Loading theme={theme} />
       ) : (
         <section className={theme}>
           <Header />

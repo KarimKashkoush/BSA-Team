@@ -45,7 +45,7 @@ export default function Board() {
                                           <img src={marketing} alt="img" />
                                           <section className="text">
                                                 <h2>Nada Elsayed</h2>
-                                                <p>Marketing Leader</p>
+                                                <p>Marketing Agent</p>
                                           </section>
                                     </section>
                                     <section className="box" data-aos="zoom-in-up">

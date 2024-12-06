@@ -3,7 +3,6 @@ import logo from "../../assets/images/logo.png"
 import whatsapp from "../../assets/images/whatsapp.png"
 import facebook from "../../assets/images/facebook_2111398.png"
 import instagram from "../../assets/images/instagram.png"
-import twitter from "../../assets/images/twitter.png"
 import youtube from "../../assets/images/youtube.png"
 import tiktok from "../../assets/images/social-media.png"
 import linkedin from "../../assets/images/linkedin.png"
@@ -49,11 +48,6 @@ export default function Footer() {
                                                       <li>
                                                             <Link target="_blank" to="https://www.linkedin.com/company/biomedical-scientific-association/">
                                                                   <img src={linkedin} alt="instagram" />
-                                                            </Link>
-                                                      </li>
-                                                      <li>
-                                                            <Link target="_blank" to="#">
-                                                                  <img src={twitter} alt="twitter" />
                                                             </Link>
                                                       </li>
                                                       <li>

@@ -18,11 +18,6 @@ export default function ScientificDayForm() {
 
 
       const onSubmit = async (data) => {
-            const hasErrors = Object.keys(errors).length > 0;
-            if (hasErrors) {
-                  return;
-            }
-
             try {
                   Swal.fire({
                         title: "Loading...",
@@ -45,7 +40,6 @@ export default function ScientificDayForm() {
                   const timeString = currentDate.toLocaleTimeString('en-GB', { hour12: true });
 
                   const dateTimeString = `${dateString} - ${timeString}`;
-
                   formData.append('time', dateTimeString);
 
                   await fetch(scriptURL, {
@@ -72,6 +66,7 @@ export default function ScientificDayForm() {
                               });
                         });
             } catch (err) {
+                  console.log(err)
                   if (err) {
                         Swal.fire({
                               position: "center-center",
@@ -89,6 +84,7 @@ export default function ScientificDayForm() {
             <section className="scientific-day-form">
                   <section className="container">
                         <form onSubmit={handleSubmit(onSubmit)} name="form-contact" data-aos="zoom-in-up">
+                              <h2>Main Data</h2>
                               <section className="inputs">
                                     {/* Name in Arabic */}
                                     <section className="input-control">
@@ -99,6 +95,11 @@ export default function ScientificDayForm() {
                                                 id="nameAr"
                                                 {...register("nameAr", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                       pattern: {
                                                             value: /^[\u0600-\u06FF\s]+$/,
                                                             message: "Name must be in Arabic",
@@ -118,6 +119,11 @@ export default function ScientificDayForm() {
                                                 name="nameEn"
                                                 {...register("nameEn", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                       pattern: {
                                                             value: /^[a-zA-Z\s]+$/,
                                                             message: "Name must be in English",
@@ -135,17 +141,18 @@ export default function ScientificDayForm() {
                                                 name="age"
                                                 type="number"
                                                 id="age"
-                                                min={18}
-                                                max={30}
+                                                min="18"
+                                                max="30"
                                                 {...register("age", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                       min: {
                                                             value: 18,
                                                             message: "Age must be at least 18",
                                                       },
                                                       max: {
                                                             value: 30,
-                                                            message: "Age must be less than 99",
+                                                            message: "Age must be less than 30",
                                                       },
                                                 })}
                                                 placeholder="Enter Your Age"
@@ -161,6 +168,7 @@ export default function ScientificDayForm() {
                                                 id="email"
                                                 {...register("email", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                       pattern: {
                                                             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                                                             message: "Invalid email address",
@@ -179,6 +187,7 @@ export default function ScientificDayForm() {
                                                 id="phone"
                                                 {...register("phone", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                       pattern: {
                                                             value: /^[0-9]{10,15}$/,
                                                             message: "Phone number must be 10-15 digits",
@@ -197,6 +206,7 @@ export default function ScientificDayForm() {
                                                 id="nationalId"
                                                 {...register("nationalId", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                       pattern: {
                                                             value: /^[0-9]{14}$/,
                                                             message: "National ID must be 14 digits",
@@ -214,6 +224,7 @@ export default function ScientificDayForm() {
                                                 id="university"
                                                 {...register("university", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                 })}
                                           >
                                                 <option value="">
@@ -252,6 +263,7 @@ export default function ScientificDayForm() {
                                                 id="faculty"
                                                 {...register("faculty", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
                                                 })}
                                           >
                                                 <option value="">
@@ -323,7 +335,10 @@ export default function ScientificDayForm() {
                                           </select>
                                           {errors.level && <span className="error-message">{errors.level.message}</span>}
                                     </section>
+                              </section>
 
+                              <h2>How much do you know about biomedical engineering?</h2>
+                              <section className="inputs">
                                     {/* Question: What do you know about the Baheya Foundation? */}
                                     <section className="input-control">
                                           <label htmlFor="baheyaFoundation">What do you know about the Baheya Foundation? <span>*</span></label>
@@ -332,6 +347,11 @@ export default function ScientificDayForm() {
                                                 id="baheyaFoundation"
                                                 {...register("baheyaFoundation", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -346,6 +366,11 @@ export default function ScientificDayForm() {
                                                 id="foundationServices"
                                                 {...register("foundationServices", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -360,6 +385,11 @@ export default function ScientificDayForm() {
                                                 id="scientificDayAspirations"
                                                 {...register("scientificDayAspirations", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -374,6 +404,11 @@ export default function ScientificDayForm() {
                                                 id="hospitalDifference"
                                                 {...register("hospitalDifference", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -388,6 +423,11 @@ export default function ScientificDayForm() {
                                                 id="biomedicalEngineerFields"
                                                 {...register("biomedicalEngineerFields", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -402,6 +442,11 @@ export default function ScientificDayForm() {
                                                 id="medicalDevicesTypes"
                                                 {...register("medicalDevicesTypes", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -416,21 +461,31 @@ export default function ScientificDayForm() {
                                                 id="medicalEngineerTitle"
                                                 {...register("medicalEngineerTitle", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
                                           {errors.medicalEngineerTitle && <span className="error-message">{errors.medicalEngineerTitle.message}</span>}
                                     </section>
 
-                                    {/* Question: Mention the different types of equipment that use X-rays. */}
-                                    
+                                    {/* Question: Mention the different types of equipment that use radiology. */}
+
                                     <section className="input-control">
-                                          <label htmlFor="xrayEquipment">Mention the different types of equipment that use X-rays. <span>*</span></label>
+                                          <label htmlFor="radiologyEquipment">Mention the different types of equipment that use radiology. <span>*</span></label>
                                           <input
                                                 type="text"
-                                                id="xrayEquipment"
-                                                {...register("xrayEquipment", {
+                                                id="radiologyEquipment"
+                                                {...register("radiologyEquipment", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -438,6 +493,7 @@ export default function ScientificDayForm() {
                                     </section>
 
                                     {/* Question: Mention 4 radiology devices. */}
+
                                     <section className="input-control">
                                           <label htmlFor="radiologyDevices">Mention 4 radiology devices. <span>*</span></label>
                                           <input
@@ -445,6 +501,11 @@ export default function ScientificDayForm() {
                                                 id="radiologyDevices"
                                                 {...register("radiologyDevices", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -459,6 +520,11 @@ export default function ScientificDayForm() {
                                                 id="mammographyDevice"
                                                 {...register("mammographyDevice", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -473,6 +539,11 @@ export default function ScientificDayForm() {
                                                 id="electricalCircuitComponents"
                                                 {...register("electricalCircuitComponents", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -487,6 +558,11 @@ export default function ScientificDayForm() {
                                                 id="fuseUsage"
                                                 {...register("fuseUsage", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -501,6 +577,11 @@ export default function ScientificDayForm() {
                                                 id="capacitorUsage"
                                                 {...register("capacitorUsage", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -515,6 +596,11 @@ export default function ScientificDayForm() {
                                                 id="heatSinkUsage"
                                                 {...register("heatSinkUsage", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -529,6 +615,11 @@ export default function ScientificDayForm() {
                                                 id="medicalPlannerJob"
                                                 {...register("medicalPlannerJob", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />
@@ -543,6 +634,11 @@ export default function ScientificDayForm() {
                                                 id="clinicalEngineerJob"
                                                 {...register("clinicalEngineerJob", {
                                                       required: "This field is required",
+                                                      setValueAs: (value) => value.trim(),
+                                                      minLength: {
+                                                            value: 5,
+                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
+                                                      },
                                                 })}
                                                 placeholder="Answer here"
                                           />

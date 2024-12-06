@@ -1,6 +1,8 @@
 import "./events.css"
+import Footer from "../../components/footer/Footer"
 export default function Events() {
       return (
+            <>
             <section className="events">
                   <section className="container">
                         <section className="section-header">
@@ -35,5 +37,8 @@ export default function Events() {
                         </section>
                   </section>
             </section>
+            <Footer />
+            </>
+            
       )
 }

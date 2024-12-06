@@ -41,7 +41,7 @@
 
       .active,
       li a:hover {
-        color: #3492e0;
+        color: #d4d4d4;
       }
     }
   }
@@ -146,7 +146,6 @@
   transform: rotate(-135deg);
 }
 
-.dark .header .container,
-.dark .header .container .nav ul {
+.dark .header .container{
   background-color: rgba(63, 63, 70, 0.8);
 }

@@ -48,16 +48,7 @@ export default function Header() {
         <section className={`nav ${showNav}`}>
           <ul>
             <li>
-              <NavLink to="/about" onClick={() => { nav() }}>about</NavLink>
-            </li>
-            <li>
-              <NavLink to="/joinTheTeam" onClick={() => { nav() }}>join</NavLink>
-            </li>
-            <li>
               <NavLink to="/events" onClick={() => { nav() }}>events</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" onClick={() => { nav() }}>about</NavLink>
             </li>
           </ul>
         </section>

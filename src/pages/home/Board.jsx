@@ -3,13 +3,15 @@ import vice from "../../assets/images/vice.jpg"
 import media from "../../assets/images/media.jpg"
 import marketing from "../../assets/images/marketing.jpg"
 import free from "../../assets/images/free-1.jpg"
-import hr from "../../assets/images/hr.jpg"
+import hr from "../../assets/images/hr.jpeg"
 import pr from "../../assets/images/pr-fr.jpg"
 import design from "../../assets/images/design.jpg"
 import logictic from "../../assets/images/logistic.jpg"
+import freemember from "../../assets/images/free-member.jpeg"
+import Scientific from "../../assets/images/Scientific.jpeg"
 export default function Board() {
       return (
-            <section className="board">
+            <section className="board" id="board">
                   <section className="container">
                         <section className="section-header">
                               <h2>BSA Board</h2>
@@ -79,6 +81,20 @@ export default function Board() {
                                           <section className="text">
                                                 <h2>Karim Mohamed Kashkoush</h2>
                                                 <p>Logistic Leader</p>
+                                          </section>
+                                    </section>
+                                    <section className="box">
+                                          <img src={freemember} alt="img" />
+                                          <section className="text">
+                                                <h2>Hla Sherif</h2>
+                                                <p>Free Member</p>
+                                          </section>
+                                    </section>
+                                    <section className="box">
+                                          <img src={Scientific} alt="img" />
+                                          <section className="text">
+                                                <h2>Norhan Khalid Mohamed</h2>
+                                                <p>Scientific Leader</p>
                                           </section>
                                     </section>
                               </section>

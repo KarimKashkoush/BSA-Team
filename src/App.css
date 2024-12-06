@@ -31,8 +31,11 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
   font-family: "Cairo", sans-serif;
 }
 
@@ -58,6 +61,7 @@ body {
     width: 1150px;
   }
 }
+
 input,
 textarea {
   outline: none;

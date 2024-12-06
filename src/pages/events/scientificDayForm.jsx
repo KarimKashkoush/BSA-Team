@@ -60,7 +60,7 @@ export default function ScientificDayForm() {
                                     showConfirmButton: false,
                                     timer: 1500
                               });
-                              dispatch(insert(data))
+                              dispatch(insert(data));
                               navigate("/");
                         })
                         .catch(() => {

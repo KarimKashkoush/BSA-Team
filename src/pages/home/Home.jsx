@@ -7,6 +7,7 @@ import BsaFamily from "./BsaFamily"
 import WhoBsa from "./WhoBsa"
 import Sponsers from "./Sponsers"
 import ContactUs from "./ContactUs"
+import Footer from '../../components/footer/Footer'
 
 export default function Home() {
       
@@ -20,6 +21,7 @@ export default function Home() {
                   <BsaFamily />
                   <Sponsers />
                   <ContactUs />
+                  <Footer />
             </section>
       )
 }

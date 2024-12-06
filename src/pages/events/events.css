@@ -117,6 +117,7 @@
       button {
         display: block;
         margin-top: 50px;
+        font-weight: 700;
         width: 100%;
         background-color: var(--bg-sub-color);
         color: var(--w-color);

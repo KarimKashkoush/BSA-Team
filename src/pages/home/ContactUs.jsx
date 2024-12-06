@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import contact from '../../assets/animation/contact-us.json'
 export default function ContactUs() {
       return (
-            <section className="contactus">
+            <section className="contactus" id="contact">
                   <section className="section-header">
                         <h2>Contact Us</h2>
                   </section>

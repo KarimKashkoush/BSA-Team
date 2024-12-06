@@ -2,7 +2,7 @@ import logo from '../../assets/images/logo.png'
 
 export default function About() {
       return (
-            <section className="about">
+            <section className="about" id='about'>
                   <section className="container">
                         <section className="section-header">
                               <h2>About</h2>

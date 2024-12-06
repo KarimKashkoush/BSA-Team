@@ -6,7 +6,7 @@ import logo from '../../assets/images/logo.png'
 import { light, dark } from '../../state/themeSlice';
 
 export default function Header() {
-  const { theme, icon } = useSelector((state) => state.themeSlice);
+  const { theme } = useSelector((state) => state.themeSlice);
 
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ export default function Header() {
         </NavLink>
 
 
-        <button onClick={() => { theme === 'light' ? dispatch(dark()) : dispatch(light()) }}><i className={`fa-solid fa-${icon}`}></i></button>
+        <button onClick={() => { theme === 'light' ? dispatch(dark()) : dispatch(light()) }}><i className="fa-solid fa-cloud-sun"></i></button>
 
         <button
           id="nav-icon1"

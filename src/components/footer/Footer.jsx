@@ -32,7 +32,7 @@ export default function Footer() {
                                                 <h3>social media</h3>
                                                 <ul>
                                                       <li>
-                                                            <Link target="_blank" to="/events">
+                                                            <Link target="_blank" to="https://wa.me/01092851943">
                                                                   <img src={whatsapp} alt="whatsapp" />
                                                             </Link>
                                                       </li>

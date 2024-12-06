@@ -6,6 +6,7 @@ import instagram from "../../assets/images/instagram.png"
 import twitter from "../../assets/images/twitter.png"
 import youtube from "../../assets/images/youtube.png"
 import tiktok from "../../assets/images/social-media.png"
+import linkedin from "../../assets/images/linkedin.png"
 import "./footer.css"
 import moment from "moment"
 export default function Footer() {
@@ -31,32 +32,37 @@ export default function Footer() {
                                                 <h3>social media</h3>
                                                 <ul>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="/events">
                                                                   <img src={whatsapp} alt="whatsapp" />
                                                             </Link>
                                                       </li>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="https://www.facebook.com/share/17rmjBuyj8/?mibextid=LQQJ4d">
                                                                   <img src={facebook} alt="facebook" />
                                                             </Link>
                                                       </li>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="https://www.instagram.com/bsaofficialacc/profilecard/?igsh=MW4yYjQ3dnk1b2R5NA==">
                                                                   <img src={instagram} alt="instagram" />
                                                             </Link>
                                                       </li>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="https://www.linkedin.com/company/biomedical-scientific-association/">
+                                                                  <img src={linkedin} alt="instagram" />
+                                                            </Link>
+                                                      </li>
+                                                      <li>
+                                                            <Link target="_blank" to="#">
                                                                   <img src={twitter} alt="twitter" />
                                                             </Link>
                                                       </li>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="https://youtube.com/@bsa5020?si=Hxd7Is159sHhYaRr">
                                                                   <img src={youtube} alt="youtube" />
                                                             </Link>
                                                       </li>
                                                       <li>
-                                                            <Link to="/events">
+                                                            <Link target="_blank" to="https://www.tiktok.com/@bsaofficialacc?_t=8rzdsZBmT3A&_r=1">
                                                                   <img src={tiktok} alt="tiktok" />
                                                             </Link>
                                                       </li>

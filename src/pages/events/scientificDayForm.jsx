@@ -88,7 +88,7 @@ export default function ScientificDayForm() {
       return (
             <section className="scientific-day-form">
                   <section className="container">
-                        <form onSubmit={handleSubmit(onSubmit)} name="form-contact">
+                        <form onSubmit={handleSubmit(onSubmit)} name="form-contact" data-aos="zoom-in-up">
                               <section className="inputs">
                                     {/* Name in Arabic */}
                                     <section className="input-control">
@@ -135,6 +135,8 @@ export default function ScientificDayForm() {
                                                 name="age"
                                                 type="number"
                                                 id="age"
+                                                min={18}
+                                                max={30}
                                                 {...register("age", {
                                                       required: "This field is required",
                                                       min: {
@@ -142,7 +144,7 @@ export default function ScientificDayForm() {
                                                             message: "Age must be at least 18",
                                                       },
                                                       max: {
-                                                            value: 99,
+                                                            value: 30,
                                                             message: "Age must be less than 99",
                                                       },
                                                 })}
@@ -321,6 +323,232 @@ export default function ScientificDayForm() {
                                           </select>
                                           {errors.level && <span className="error-message">{errors.level.message}</span>}
                                     </section>
+
+                                    {/* Question: What do you know about the Baheya Foundation? */}
+                                    <section className="input-control">
+                                          <label htmlFor="baheyaFoundation">What do you know about the Baheya Foundation? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="baheyaFoundation"
+                                                {...register("baheyaFoundation", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.baheyaFoundation && <span className="error-message">{errors.baheyaFoundation.message}</span>}
+                                    </section>
+
+                                    {/* Question: What services does the foundation provide? */}
+                                    <section className="input-control">
+                                          <label htmlFor="foundationServices">What services does the foundation provide? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="foundationServices"
+                                                {...register("foundationServices", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.foundationServices && <span className="error-message">{errors.foundationServices.message}</span>}
+                                    </section>
+
+                                    {/* Question: What are your aspirations for the scientific day? */}
+                                    <section className="input-control">
+                                          <label htmlFor="scientificDayAspirations">What are your aspirations for the scientific day? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="scientificDayAspirations"
+                                                {...register("scientificDayAspirations", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.scientificDayAspirations && <span className="error-message">{errors.scientificDayAspirations.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the difference between the hospital and the medical center? */}
+                                    <section className="input-control">
+                                          <label htmlFor="hospitalDifference">What is the difference between the hospital and the medical center? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="hospitalDifference"
+                                                {...register("hospitalDifference", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.hospitalDifference && <span className="error-message">{errors.hospitalDifference.message}</span>}
+                                    </section>
+
+                                    {/* Question: What are the fields of work of the biomedical engineer? */}
+                                    <section className="input-control">
+                                          <label htmlFor="biomedicalEngineerFields">What are the fields of work of the biomedical engineer? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="biomedicalEngineerFields"
+                                                {...register("biomedicalEngineerFields", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.biomedicalEngineerFields && <span className="error-message">{errors.biomedicalEngineerFields.message}</span>}
+                                    </section>
+
+                                    {/* Question: Mention the types of medical devices (their categories). */}
+                                    <section className="input-control">
+                                          <label htmlFor="medicalDevicesTypes">Mention the types of medical devices (their categories). <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="medicalDevicesTypes"
+                                                {...register("medicalDevicesTypes", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.medicalDevicesTypes && <span className="error-message">{errors.medicalDevicesTypes.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the job title of the medical engineer in the hospital? */}
+                                    <section className="input-control">
+                                          <label htmlFor="medicalEngineerTitle">What is the job title of the medical engineer in the hospital? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="medicalEngineerTitle"
+                                                {...register("medicalEngineerTitle", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.medicalEngineerTitle && <span className="error-message">{errors.medicalEngineerTitle.message}</span>}
+                                    </section>
+
+                                    {/* Question: Mention the different types of equipment that use X-rays. */}
+                                    
+                                    <section className="input-control">
+                                          <label htmlFor="xrayEquipment">Mention the different types of equipment that use X-rays. <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="xrayEquipment"
+                                                {...register("xrayEquipment", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.xrayEquipment && <span className="error-message">{errors.xrayEquipment.message}</span>}
+                                    </section>
+
+                                    {/* Question: Mention 4 radiology devices. */}
+                                    <section className="input-control">
+                                          <label htmlFor="radiologyDevices">Mention 4 radiology devices. <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="radiologyDevices"
+                                                {...register("radiologyDevices", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.radiologyDevices && <span className="error-message">{errors.radiologyDevices.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is a mammography device? */}
+                                    <section className="input-control">
+                                          <label htmlFor="mammographyDevice">What is a mammography device? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="mammographyDevice"
+                                                {...register("mammographyDevice", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.mammographyDevice && <span className="error-message">{errors.mammographyDevice.message}</span>}
+                                    </section>
+
+                                    {/* Question: What are the main components in an electrical circuit? */}
+                                    <section className="input-control">
+                                          <label htmlFor="electricalCircuitComponents">What are the main components in an electrical circuit? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="electricalCircuitComponents"
+                                                {...register("electricalCircuitComponents", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.electricalCircuitComponents && <span className="error-message">{errors.electricalCircuitComponents.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the fuse used in an electrical circuit? */}
+                                    <section className="input-control">
+                                          <label htmlFor="fuseUsage">What is the fuse used in an electrical circuit? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="fuseUsage"
+                                                {...register("fuseUsage", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.fuseUsage && <span className="error-message">{errors.fuseUsage.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the capacitor used in an electrical circuit? */}
+                                    <section className="input-control">
+                                          <label htmlFor="capacitorUsage">What is the capacitor used in an electrical circuit? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="capacitorUsage"
+                                                {...register("capacitorUsage", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.capacitorUsage && <span className="error-message">{errors.capacitorUsage.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the heat sink used for? */}
+                                    <section className="input-control">
+                                          <label htmlFor="heatSinkUsage">What is the heat sink used for? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="heatSinkUsage"
+                                                {...register("heatSinkUsage", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.heatSinkUsage && <span className="error-message">{errors.heatSinkUsage.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the job of a medical planner engineer? */}
+                                    <section className="input-control">
+                                          <label htmlFor="medicalPlannerJob">What is the job of a medical planner engineer? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="medicalPlannerJob"
+                                                {...register("medicalPlannerJob", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.medicalPlannerJob && <span className="error-message">{errors.medicalPlannerJob.message}</span>}
+                                    </section>
+
+                                    {/* Question: What is the job of a clinical engineer? */}
+                                    <section className="input-control">
+                                          <label htmlFor="clinicalEngineerJob">What is the job of a clinical engineer? <span>*</span></label>
+                                          <input
+                                                type="text"
+                                                id="clinicalEngineerJob"
+                                                {...register("clinicalEngineerJob", {
+                                                      required: "This field is required",
+                                                })}
+                                                placeholder="Answer here"
+                                          />
+                                          {errors.clinicalEngineerJob && <span className="error-message">{errors.clinicalEngineerJob.message}</span>}
+                                    </section>
+
 
                                     {/* Comments */}
                                     <section className="input-control">

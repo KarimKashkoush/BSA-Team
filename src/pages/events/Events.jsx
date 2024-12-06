@@ -11,7 +11,7 @@ export default function Events() {
                               </h2>
                         </section>
                         <section className="boxs">
-                              <section className="box">
+                              <section className="box" data-aos="zoom-in-up">
                                     <img src="https://localmedia.org/wp-content/uploads/2021/06/events-1.png" alt="" />
                                     <section className="title">
                                           <section>

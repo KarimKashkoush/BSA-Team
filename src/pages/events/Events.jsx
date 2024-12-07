@@ -1,5 +1,6 @@
 import "./events.css"
 import Footer from "../../components/footer/Footer"
+import scientificDay from "../../assets/images/scientificDay.png"
 export default function Events() {
       return (
             <>
@@ -12,7 +13,7 @@ export default function Events() {
                         </section>
                         <section className="boxs">
                               <section className="box" data-aos="zoom-in-up">
-                                    <img src="https://localmedia.org/wp-content/uploads/2021/06/events-1.png" alt="" />
+                                    <img src={scientificDay} alt="image-events" />
                                     <section className="title">
                                           <section>
                                                 <h3>Scientific Day</h3>

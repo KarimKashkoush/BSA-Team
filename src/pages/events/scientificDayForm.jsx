@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { insert } from "../../state/rejesterSlice";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
+
 // import moment from 'moment';
 // import Swal from "Swal"
 export default function ScientificDayForm() {

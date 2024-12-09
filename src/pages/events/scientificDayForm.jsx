@@ -338,7 +338,10 @@ export default function ScientificDayForm() {
                                     </section>
                               </section>
 
-                              <h2>How much do you know about biomedical engineering?</h2>
+                              <h2>How much do you know about biomedical engineering?
+                                    <br />
+                                    Help us improve your knowledge
+                              </h2>
                               <section className="inputs">
                                     {/* Question: What do you know about the Baheya Foundation? */}
                                     <section className="input-control">
@@ -359,25 +362,6 @@ export default function ScientificDayForm() {
                                           {errors.baheyaFoundation && <span className="error-message">{errors.baheyaFoundation.message}</span>}
                                     </section>
 
-                                    {/* Question: What services does the foundation provide? */}
-                                    <section className="input-control">
-                                          <label htmlFor="foundationServices">What services does the foundation provide? <span>*</span></label>
-                                          <input
-                                                type="text"
-                                                id="foundationServices"
-                                                {...register("foundationServices", {
-                                                      required: "This field is required",
-                                                      setValueAs: (value) => value.trim(),
-                                                      minLength: {
-                                                            value: 5,
-                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
-                                                      },
-                                                })}
-                                                placeholder="Answer here"
-                                          />
-                                          {errors.foundationServices && <span className="error-message">{errors.foundationServices.message}</span>}
-                                    </section>
-
                                     {/* Question: What are your aspirations for the scientific day? */}
                                     <section className="input-control">
                                           <label htmlFor="scientificDayAspirations">What are your aspirations for the scientific day? <span>*</span></label>
@@ -395,25 +379,6 @@ export default function ScientificDayForm() {
                                                 placeholder="Answer here"
                                           />
                                           {errors.scientificDayAspirations && <span className="error-message">{errors.scientificDayAspirations.message}</span>}
-                                    </section>
-
-                                    {/* Question: What is the difference between the hospital and the medical center? */}
-                                    <section className="input-control">
-                                          <label htmlFor="hospitalDifference">What is the difference between the hospital and the medical center? <span>*</span></label>
-                                          <input
-                                                type="text"
-                                                id="hospitalDifference"
-                                                {...register("hospitalDifference", {
-                                                      required: "This field is required",
-                                                      setValueAs: (value) => value.trim(),
-                                                      minLength: {
-                                                            value: 5,
-                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
-                                                      },
-                                                })}
-                                                placeholder="Answer here"
-                                          />
-                                          {errors.hospitalDifference && <span className="error-message">{errors.hospitalDifference.message}</span>}
                                     </section>
 
                                     {/* Question: What are the fields of work of the biomedical engineer? */}
@@ -493,26 +458,6 @@ export default function ScientificDayForm() {
                                           {errors.xrayEquipment && <span className="error-message">{errors.xrayEquipment.message}</span>}
                                     </section>
 
-                                    {/* Question: Mention 4 radiology devices. */}
-
-                                    <section className="input-control">
-                                          <label htmlFor="radiologyDevices">Mention 4 radiology devices. <span>*</span></label>
-                                          <input
-                                                type="text"
-                                                id="radiologyDevices"
-                                                {...register("radiologyDevices", {
-                                                      required: "This field is required",
-                                                      setValueAs: (value) => value.trim(),
-                                                      minLength: {
-                                                            value: 5,
-                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
-                                                      },
-                                                })}
-                                                placeholder="Answer here"
-                                          />
-                                          {errors.radiologyDevices && <span className="error-message">{errors.radiologyDevices.message}</span>}
-                                    </section>
-
                                     {/* Question: What is a mammography device? */}
                                     <section className="input-control">
                                           <label htmlFor="mammographyDevice">What is a mammography device? <span>*</span></label>
@@ -587,25 +532,6 @@ export default function ScientificDayForm() {
                                                 placeholder="Answer here"
                                           />
                                           {errors.capacitorUsage && <span className="error-message">{errors.capacitorUsage.message}</span>}
-                                    </section>
-
-                                    {/* Question: What is the heat sink used for? */}
-                                    <section className="input-control">
-                                          <label htmlFor="heatSinkUsage">What is the heat sink used for? <span>*</span></label>
-                                          <input
-                                                type="text"
-                                                id="heatSinkUsage"
-                                                {...register("heatSinkUsage", {
-                                                      required: "This field is required",
-                                                      setValueAs: (value) => value.trim(),
-                                                      minLength: {
-                                                            value: 5,
-                                                            message: "The answer must be at least 5 characters long", // رسالة عند إدخال أقل من 5 حروف
-                                                      },
-                                                })}
-                                                placeholder="Answer here"
-                                          />
-                                          {errors.heatSinkUsage && <span className="error-message">{errors.heatSinkUsage.message}</span>}
                                     </section>
 
                                     {/* Question: What is the job of a medical planner engineer? */}

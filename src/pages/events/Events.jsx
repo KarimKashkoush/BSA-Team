@@ -27,7 +27,7 @@ export default function Events() {
                                           </section>
                                           <section>
                                                 <i className="fa-solid fa-location-dot"></i>
-                                                <p>مجدي ابو ريان</p>
+                                                <p>Prof. Dr. Saeed Ashour Hall</p>
                                           </section>
                                           <section className="links">
                                           <a href="/scientificDayForm"><i className="fa-solid fa-ticket"></i> Book Now</a>

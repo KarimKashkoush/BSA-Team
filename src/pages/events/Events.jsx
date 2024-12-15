@@ -30,8 +30,8 @@ export default function Events() {
                                                 <p>Prof. Dr. Saeed Ashour Hall</p>
                                           </section>
                                           <section className="links">
-                                          <a href="/scientificDayForm"><i className="fa-solid fa-ticket"></i> Book Now</a>
-                                          <a href="#"><i className="fa-solid fa-download"></i> Agenda</a>
+                                          <a href="/scientificDayForm">Registration closed</a>
+                                          <a href="#"><i className="fa-solid fa-download"></i>Agenda</a>
                                           </section>
                                     </section>
                               </section>

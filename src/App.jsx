@@ -7,7 +7,6 @@ import About from "./pages/about/About";
 import JoinTheTeam from "./pages/joinTheTeam/JoinTheTeam";
 import Loading from "./pages/loading/Loading";
 import Events from "./pages/events/Events";
-import ScientificDayForm from "./pages/events/scientificDayForm";
 import End from "./pages/events/End";
 import { useSelector } from "react-redux"
 import AOS from "aos";

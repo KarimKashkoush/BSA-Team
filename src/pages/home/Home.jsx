@@ -7,6 +7,7 @@ import BsaFamily from "./BsaFamily"
 import WhoBsa from "./WhoBsa"
 import Sponsers from "./Sponsers"
 import ContactUs from "./ContactUs"
+import Help from './Help'
 import Footer from '../../components/footer/Footer'
 import ScrollTop from '../../components/scrollTop/ScrollTop'
 
@@ -19,6 +20,7 @@ export default function Home() {
                   <Landing />
                   <About />
                   <WhoBsa />
+                  <Help />
                   <Board />
                   <BsaFamily />
                   <Sponsers />

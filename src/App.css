@@ -78,6 +78,7 @@ textarea {
   display: block;
   text-align: center;
   margin-bottom: 30px;
+  padding-inline: 20px;
 
   h2 {
     font-weight: 700;
@@ -110,6 +111,23 @@ textarea {
       border-radius: 50%;
       background-color: var(--main-color);
     }
+  }
+}
+
+.sup-title {
+  border-left: 4px solid var(--main-color);
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  color: var(--main-color);
+
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
   }
 }
 

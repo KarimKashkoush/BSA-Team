@@ -282,3 +282,9 @@
             }
       }
 }
+
+.help {
+      padding-block: var(--p-50);
+      border-bottom: var(--border-bottom);
+      background-color: var(--bg-color);
+}

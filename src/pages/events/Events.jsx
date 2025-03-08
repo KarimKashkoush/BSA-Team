@@ -35,6 +35,30 @@ export default function Events() {
                                           </section>
                                     </section>
                               </section>
+
+                              <section className="box" data-aos="zoom-in-up">
+                                    <img src={scientificDay} alt="image-events" />
+                                    <section className="title">
+                                          <section>
+                                                <h3>9th Conference</h3>
+                                          </section>
+                                          <section>
+                                                <p>9th Conference for the Academic Year 2024-2025.</p>
+                                          </section>
+                                          <section>
+                                                <i className="fa-solid fa-clock"></i>
+                                                <p>15/4 - 9:00AM to 6:00PM</p>
+                                          </section>
+                                          <section>
+                                                <i className="fa-solid fa-location-dot"></i>
+                                                <p>Prof. Dr. Saeed Ashour Hall</p>
+                                          </section>
+                                          <section className="links">
+                                          <a href="/conference">Register</a>
+                                          <a href="#"><i className="fa-solid fa-download"></i>Agenda</a>
+                                          </section>
+                                    </section>
+                              </section>
                         </section>
                   </section>
             </section>

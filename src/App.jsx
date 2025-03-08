@@ -8,6 +8,7 @@ import JoinTheTeam from "./pages/joinTheTeam/JoinTheTeam";
 import Loading from "./pages/loading/Loading";
 import Events from "./pages/events/Events";
 import End from "./pages/events/End";
+import Conference from './pages/events/Conference'
 import { useSelector } from "react-redux"
 import AOS from "aos";
 
@@ -43,6 +44,7 @@ function App() {
             <Route path="/joinTheTeam" element={<JoinTheTeam />} />
             <Route path="/events" element={<Events />} />
             <Route path="/scientificDayForm" element={<End />} />
+            <Route path="/conference" element={<Conference />} />
           </Routes>
         </section>
       )}

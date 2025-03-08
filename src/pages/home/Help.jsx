@@ -9,6 +9,9 @@ const ppData = [800];
 const uuData = [400];
 const xxLabels = ['8th'];
 
+const bioData = [200, 350];
+const bioLabels = ['2024', '2025'];
+
 export default function Help() {
       return (
             <section className="help">
@@ -25,6 +28,7 @@ export default function Help() {
                         {/* أول Box (المخطط الأول) */}
                         <Box
                               sx={{
+                                    marginBottom: '50px',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     gap: 3, // المسافة بين الأعمدة في الشاشات الصغيرة
@@ -112,6 +116,60 @@ export default function Help() {
                                     />
                               </Box>
                         </Box>
+
+                        <section className="sup-title">
+                              <h3>Bioverse</h3>
+                              Summer 2024 and 2025
+                        </section>
+
+                        <Box
+                              sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 3, // المسافة بين الأعمدة في الشاشات الصغيرة
+                                    '@media(min-width: 786px)': {
+                                          flexDirection: 'row', // في الشاشات الكبيرة، عرض الأعمدة بجانب بعض
+                                          gap: 3, // المسافة بين الأعمدة في الشاشات الكبيرة
+                                    },
+                              }}
+                        >
+
+                              <Box
+                                    sx={{
+                                          flex: 1, // المربع الأول يأخذ المساحة المتاحة بالكامل
+                                          minWidth: '300px', // تحديد عرض الحد الأدنى للمربع الأول
+                                          height: '400px', // تحديد ارتفاع ثابت
+                                    }}
+
+                                    data-aos="zoom-in-up"
+                              >
+                                    <BarChart
+                                          width={undefined} // إزالة العرض الثابت
+                                          height={undefined} // إزالة الارتفاع الثابت
+                                          title='Registration and Audience'
+                                          series={[
+                                                {
+                                                      data: bioData,
+                                                      label: 'Audience',
+                                                      id: 'uvId',
+                                                      color: '#02b2af', // لون السلسلة الثانية
+                                                },
+                                                
+                                          ]}
+                                          xAxis={[{ data: bioLabels, scaleType: 'band' }]}
+                                          sx={{
+                                                backgroundColor: '#f5f5f5',
+                                                borderRadius: '8px',
+                                                padding: '16px',
+                                                width: '100%',
+                                                height: '100%',
+                                          }}
+                                    />
+                              </Box>
+                        </Box>
+
+
+
 
                   </section>
             </section>

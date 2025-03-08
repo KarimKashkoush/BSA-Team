@@ -1,5 +1,6 @@
+import { useState, useEffect, useRef } from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
-import { Box } from '@mui/material'; // استيراد Box
+import { Box } from '@mui/material';
 
 const pData = [400, 420, 450, 570];
 const uData = [150, 180, 200, 240];
@@ -13,6 +14,54 @@ const bioData = [200, 350];
 const bioLabels = ['2024', '2025'];
 
 export default function Help() {
+      const [count, setCount] = useState(0);
+      const [isInView, setIsInView] = useState(false); // لتحديد ما إذا كان العنصر في العرض
+      const targetRef = useRef(null); // استخدام المرجع لمراقبة العنصر الذي يحتوي على الرقم
+
+      useEffect(() => {
+            // إنشاء Intersection Observer لمراقبة التمرير
+            const observer = new IntersectionObserver(
+                  (entries) => {
+                        entries.forEach((entry) => {
+                              if (entry.isIntersecting) {
+                                    setIsInView(true); // إذا كان العنصر في العرض، نبدأ العد
+                              } else {
+                                    setIsInView(false); // إذا لم يكن العنصر في العرض، نوقف العد
+                              }
+                        });
+                  },
+                  { threshold: 0.5 } // عندما يكون 50% من العنصر في العرض
+            );
+
+            if (targetRef.current) {
+                  observer.observe(targetRef.current); // مراقبة العنصر
+            }
+
+            // تنظيف الـ observer عند مغادرة الصفحة
+            return () => {
+                  if (targetRef.current) {
+                        observer.unobserve(targetRef.current);
+                  }
+            };
+      }, []);
+
+      useEffect(() => {
+            if (isInView && count < 1980) {
+                  const interval = setInterval(() => {
+                        setCount((prevCount) => {
+                              if (prevCount < 1980) {
+                                    return Math.min(prevCount + 10, 1980); // زيادة العد ببطء حتى 1980
+                              } else {
+                                    clearInterval(interval); // إيقاف العداد عند الوصول إلى 1980
+                                    return 1980;
+                              }
+                        });
+                  }, 2); // تحديث العداد كل 20 ملي ثانية
+
+                  return () => clearInterval(interval); // تنظيف الـ interval عند مغادرة العنصر
+            }
+      }, [isInView, count]);
+
       return (
             <section className="help">
                   <section className="container">
@@ -20,9 +69,25 @@ export default function Help() {
                               <h2>What we have recently presented</h2>
                         </section>
 
+                        <Box
+                              sx={{
+                                    marginBlock: '50px',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    flexDirection: 'column',
+                                    gap: 1,
+                                    textAlign: 'center',
+                              }}
+
+                              className="counter"
+                        >
+                              <h2 ref={targetRef}>{count}</h2> 
+                              <p>Who the team helped</p>
+                        </Box>
+
                         <section className="sup-title">
                               <h3>Conferences</h3>
-                              From 4rd generation to 8th generation
+                              From 4th generation to 8th generation
                         </section>
 
                         {/* أول Box (المخطط الأول) */}
@@ -31,39 +96,37 @@ export default function Help() {
                                     marginBottom: '50px',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: 3, // المسافة بين الأعمدة في الشاشات الصغيرة
+                                    gap: 3,
                                     '@media(min-width: 786px)': {
-                                          flexDirection: 'row', // في الشاشات الكبيرة، عرض الأعمدة بجانب بعض
-                                          gap: 3, // المسافة بين الأعمدة في الشاشات الكبيرة
+                                          flexDirection: 'row',
+                                          gap: 3,
                                     },
                               }}
                         >
-                              {/* المربع الأول */}
                               <Box
                                     sx={{
-                                          flex: 0.5, // المربع الثاني يأخذ نصف عرض المربع الأول
-                                          minWidth: '300px', // تحديد عرض الحد الأدنى للمربع الثاني
-                                          height: '400px', // تحديد ارتفاع ثابت
+                                          flex: 0.5,
+                                          minWidth: '300px',
+                                          height: '400px',
                                     }}
-
                                     data-aos="zoom-in-up"
                               >
                                     <BarChart
-                                          width={undefined} // إزالة العرض الثابت
-                                          height={undefined} // إزالة الارتفاع الثابت
-                                          title='Registration and Audience'
+                                          width={undefined}
+                                          height={undefined}
+                                          title="Registration and Audience"
                                           series={[
                                                 {
                                                       data: ppData,
                                                       label: 'Registration',
                                                       id: 'pvId',
-                                                      color: '#3492E0', // لون السلسلة الأولى
+                                                      color: '#3492E0',
                                                 },
                                                 {
                                                       data: uuData,
                                                       label: 'Audience',
                                                       id: 'uvId',
-                                                      color: '#02b2af', // لون السلسلة الثانية
+                                                      color: '#02b2af',
                                                 },
                                           ]}
                                           xAxis={[{ data: xxLabels, scaleType: 'band' }]}
@@ -77,32 +140,30 @@ export default function Help() {
                                     />
                               </Box>
 
-                              {/* المربع الثاني */}
                               <Box
                                     sx={{
-                                          flex: 1, // المربع الأول يأخذ المساحة المتاحة بالكامل
-                                          minWidth: '300px', // تحديد عرض الحد الأدنى للمربع الأول
-                                          height: '400px', // تحديد ارتفاع ثابت
+                                          flex: 1,
+                                          minWidth: '300px',
+                                          height: '400px',
                                     }}
-
                                     data-aos="zoom-in-up"
                               >
                                     <BarChart
-                                          width={undefined} // إزالة العرض الثابت
-                                          height={undefined} // إزالة الارتفاع الثابت
-                                          title='Registration and Audience'
+                                          width={undefined}
+                                          height={undefined}
+                                          title="Registration and Audience"
                                           series={[
                                                 {
                                                       data: pData,
                                                       label: 'Registration',
                                                       id: 'pvId',
-                                                      color: '#3492E0', // لون السلسلة الأولى
+                                                      color: '#3492E0',
                                                 },
                                                 {
                                                       data: uData,
                                                       label: 'Audience',
                                                       id: 'uvId',
-                                                      color: '#02b2af', // لون السلسلة الثانية
+                                                      color: '#02b2af',
                                                 },
                                           ]}
                                           xAxis={[{ data: xLabels, scaleType: 'band' }]}
@@ -126,35 +187,32 @@ export default function Help() {
                               sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: 3, // المسافة بين الأعمدة في الشاشات الصغيرة
+                                    gap: 3,
                                     '@media(min-width: 786px)': {
-                                          flexDirection: 'row', // في الشاشات الكبيرة، عرض الأعمدة بجانب بعض
-                                          gap: 3, // المسافة بين الأعمدة في الشاشات الكبيرة
+                                          flexDirection: 'row',
+                                          gap: 3,
                                     },
                               }}
                         >
-
                               <Box
                                     sx={{
-                                          flex: 1, // المربع الأول يأخذ المساحة المتاحة بالكامل
-                                          minWidth: '300px', // تحديد عرض الحد الأدنى للمربع الأول
-                                          height: '400px', // تحديد ارتفاع ثابت
+                                          flex: 1,
+                                          minWidth: '300px',
+                                          height: '400px',
                                     }}
-
                                     data-aos="zoom-in-up"
                               >
                                     <BarChart
-                                          width={undefined} // إزالة العرض الثابت
-                                          height={undefined} // إزالة الارتفاع الثابت
-                                          title='Registration and Audience'
+                                          width={undefined}
+                                          height={undefined}
+                                          title="Registration and Audience"
                                           series={[
                                                 {
                                                       data: bioData,
                                                       label: 'Audience',
                                                       id: 'uvId',
-                                                      color: '#02b2af', // لون السلسلة الثانية
+                                                      color: '#02b2af',
                                                 },
-                                                
                                           ]}
                                           xAxis={[{ data: bioLabels, scaleType: 'band' }]}
                                           sx={{
@@ -167,10 +225,6 @@ export default function Help() {
                                     />
                               </Box>
                         </Box>
-
-
-
-
                   </section>
             </section>
       );

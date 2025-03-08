@@ -287,4 +287,14 @@
       padding-block: var(--p-50);
       border-bottom: var(--border-bottom);
       background-color: var(--bg-color);
+
+      .counter {
+            color: var(--main-color);
+
+            h2 {
+                  font-weight: 700;
+                  font-size: 50px;
+                  line-height: 1;
+            }
+      }
 }

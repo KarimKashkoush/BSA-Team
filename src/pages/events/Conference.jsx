@@ -1,6 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { insert } from "../../state/rejesterSlice";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +7,6 @@ export default function Conference() {
 
       const navigate = useNavigate();
       const scriptURL = "https://script.google.com/macros/s/AKfycbwgqN5l7idPnOaAZnFumidMUqDtm9PPQycMOIbbjWpPtTdeuQ47j6lIl5Nq6L1HprGc9g/exec";
-      const dispatch = useDispatch();
       const {
             register,
             handleSubmit,
@@ -46,7 +43,7 @@ export default function Conference() {
 
                   // إضافة رابط WhatsApp إلى البيانات باستخدام رقم الهاتف المدخل
                   const phoneNumber = data.phone; // الرقم المدخل في حقل phone
-                  const whatsappLink = `https://wa.me/${phoneNumber}`; // رابط WhatsApp مع الرقم
+                  const whatsappLink = `https://wa.me/+2${phoneNumber}?text='مرحبا'`; // رابط WhatsApp مع الرقم
                   formData.append('whatsapp', whatsappLink); // إضافة الحقل إلى FormData
 
                   // توليد قيمة ticket مكونة من 5 خانات من أرقام وحروف عشوائية
@@ -71,7 +68,6 @@ export default function Conference() {
                                     showConfirmButton: false,
                                     timer: 1500
                               });
-                              dispatch(insert(data)); // إرسال البيانات إلى المتجر
                               navigate("/"); // الانتقال إلى الصفحة الرئيسية أو صفحة أخرى
                         })
                         .catch(() => {
@@ -94,10 +90,6 @@ export default function Conference() {
                   }
             }
       };
-
-
-
-
 
       return (
             <section className="scientific-day-form">

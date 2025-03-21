@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
-
+import emailjs from "@emailjs/browser";
 
 export default function Conference() {
-
       const navigate = useNavigate();
       const scriptURL = "https://script.google.com/macros/s/AKfycbwgqN5l7idPnOaAZnFumidMUqDtm9PPQycMOIbbjWpPtTdeuQ47j6lIl5Nq6L1HprGc9g/exec";
       const {
@@ -20,77 +19,87 @@ export default function Conference() {
                   Swal.fire({
                         title: "Loading...",
                         text: "Please wait a moment",
-                        allowOutsideClick: false, // لا يمكن إغلاق المودال عند النقر خارجها
-                        showConfirmButton: false, // لا يظهر زر "موافق"
-                        willOpen: () => {
-                              Swal.showLoading(); // تظهر الأيقونة المتحركة الخاصة بالتحميل
-                        },
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        willOpen: () => Swal.showLoading(),
                   });
-
+      
                   const formData = new FormData();
-
-                  // إضافة كل البيانات المدخلة إلى FormData
                   Object.keys(data).forEach(key => {
                         formData.append(key, data[key]);
                   });
-
-                  // إضافة الوقت الحالي إلى البيانات
+      
                   const currentDate = new Date();
                   const dateString = currentDate.toLocaleDateString('en-GB');
                   const timeString = currentDate.toLocaleTimeString('en-GB', { hour12: true });
                   const dateTimeString = `${dateString} - ${timeString}`;
                   formData.append('time', dateTimeString);
-
-                  // إضافة رابط WhatsApp إلى البيانات باستخدام رقم الهاتف المدخل
-                  const phoneNumber = data.phone; // الرقم المدخل في حقل phone
-                  const whatsappLink = `https://wa.me/+2${phoneNumber}?text='مرحبا'`; // رابط WhatsApp مع الرقم
-                  formData.append('whatsapp', whatsappLink); // إضافة الحقل إلى FormData
-
-                  // توليد قيمة ticket مكونة من 5 خانات من أرقام وحروف عشوائية
+      
+                  const phoneNumber = data.phone;
+                  const whatsappLink = `https://wa.me/+2${phoneNumber}?text='مرحبا'`;
+                  formData.append('whatsapp', whatsappLink);
+      
                   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
                   let ticket = '';
                   for (let i = 0; i < 5; i++) {
-                        const randomIndex = Math.floor(Math.random() * chars.length);
-                        ticket += chars[randomIndex];
+                        ticket += chars[Math.floor(Math.random() * chars.length)];
                   }
-                  formData.append('ticket', ticket); // إضافة حقل ticket إلى FormData
-
-                  // إرسال البيانات باستخدام fetch
+                  formData.append('ticket', ticket);
+      
+                  // إرسال البيانات إلى Google Sheets
                   await fetch(scriptURL, {
                         method: "POST",
                         body: formData,
-                  })
-                        .then(() => {
-                              Swal.fire({
-                                    position: "center-center",
-                                    icon: "success",
-                                    title: "Your Data has been saved",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                              });
-                              navigate("/"); // الانتقال إلى الصفحة الرئيسية أو صفحة أخرى
-                        })
-                        .catch(() => {
-                              Swal.fire({
-                                    position: "center-center",
-                                    icon: "error",
-                                    title: "Oops...",
-                                    text: "Something went wrong!",
-                              });
-                        });
+                  });
+      
+                  // إعداد بيانات الإيميل
+                  const emailParams = {
+                        to_email: "bsa.official.email@gmail.com", // تأكد أن هذا البريد ليس فارغًا
+                        user_email: data.email || "backup@example.com", // تجنب إرسال بريد فارغ
+                        nameAr: data.nameAr || "N/A",
+                        nameEn: data.nameEn || "N/A",
+                        age: data.age || "N/A",
+                        email: data.email || "N/A",
+                        phone: data.phone || "N/A",
+                        nationalId: data.nationalId || "N/A",
+                        university: data.university || "N/A",
+                        faculty: data.faculty || "N/A",
+                        major: data.major || "N/A",
+                        level: data.level || "N/A",
+                        ticket: ticket,
+                        time: dateTimeString,
+                        whatsapp: whatsappLink,
+                        comments: data.comments || "No comments"
+                  };
+      
+                  // إرسال الإيميل باستخدام EmailJS
+                  await emailjs.send(
+                        "service_ep8804u", // Service ID من EmailJS
+                        "template_g97l4zr", // Template ID من EmailJS
+                        emailParams,
+                        "8Hn79Fh0mTeeoN_Lb" // Public Key من EmailJS
+                  );
+      
+                  Swal.fire({
+                        position: "center-center",
+                        icon: "success",
+                        title: "Email Sent",
+                        showConfirmButton: false,
+                        timer: 2500
+                  });
+      
+                  navigate("/");
+      
             } catch (err) {
-                  console.log(err);
-                  if (err) {
-                        Swal.fire({
-                              position: "center-center",
-                              icon: "error",
-                              title: "Oops...",
-                              text: "Something went wrong!",
-                        });
-                  }
+                  console.error(err);
+                  Swal.fire({
+                        position: "center-center",
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!",
+                  });
             }
       };
-
       return (
             <section className="scientific-day-form">
                   <section className="container">

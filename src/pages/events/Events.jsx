@@ -1,6 +1,6 @@
 import "./events.css"
 import Footer from "../../components/footer/Footer"
-import scientificDay from "../../assets/images/scientificDay.png"
+import scientificDay from "https://fv5-3.files.fm/down.php?i=hmjmerq92t&view&n=IMG_1549.png"
 export default function Events() {
       return (
             <>
@@ -37,7 +37,7 @@ export default function Events() {
                               </section> */}
 
                               <section className="box" data-aos="zoom-in-up">
-                                    {/* <img src={scientificDay} alt="image-events" /> */}
+                                    <img src={scientificDay} alt="image-events" />
                                     <section className="title">
                                           <section>
                                                 <h3>9th Conference</h3>

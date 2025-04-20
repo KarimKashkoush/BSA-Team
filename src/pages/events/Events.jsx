@@ -49,7 +49,7 @@ export default function Events() {
                                           </section>
                                           <section>
                                                 <i className="fa-solid fa-clock"></i>
-                                                <p>3/5 - 9AM</p>
+                                                <p>3/5/2025 - 8:30AM</p>
                                           </section>
                                           <section>
                                                 <i className="fa-solid fa-location-dot"></i>

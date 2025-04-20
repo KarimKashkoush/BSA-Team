@@ -109,6 +109,7 @@ export default function Conference() {
                                     <section className="input-control">
                                           <label htmlFor="nameAr">Enter your full name in Arabic <span>*</span></label>
                                           <input
+                                                dir="rtl"
                                                 name="nameAr"
                                                 type="text"
                                                 id="nameAr"
@@ -131,7 +132,7 @@ export default function Conference() {
 
                                     {/* Name in English */}
                                     <section className="input-control">
-                                          <label htmlFor="nameEn">Enter your full name in English <span>*</span></label>
+                                          <label htmlFor="nameEn">Enter your full name in English. (We will print this name on your attendance certificate!) <span>*</span></label>
                                           <input
                                                 type="text"
                                                 id="nameEn"

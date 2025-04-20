@@ -12,7 +12,7 @@ export default function Events() {
                               </h2>
                         </section>
                         <section className="boxs">
-                              <section className="box" data-aos="zoom-in-up">
+                              {/* <section className="box" data-aos="zoom-in-up">
                                     <img src={scientificDay} alt="image-events" />
                                     <section className="title">
                                           <section>
@@ -34,10 +34,10 @@ export default function Events() {
                                           <a href="#"><i className="fa-solid fa-download"></i>Agenda</a>
                                           </section>
                                     </section>
-                              </section>
+                              </section> */}
 
                               <section className="box" data-aos="zoom-in-up">
-                                    <img src={scientificDay} alt="image-events" />
+                                    {/* <img src={scientificDay} alt="image-events" /> */}
                                     <section className="title">
                                           <section>
                                                 <h3>9th Conference</h3>
@@ -47,11 +47,11 @@ export default function Events() {
                                           </section>
                                           <section>
                                                 <i className="fa-solid fa-clock"></i>
-                                                <p>15/4 - 9:00AM to 6:00PM</p>
+                                                <p>3/5 - 9AM</p>
                                           </section>
                                           <section>
                                                 <i className="fa-solid fa-location-dot"></i>
-                                                <p>Prof. Dr. Saeed Ashour Hall</p>
+                                                <p>Faculty of Engineering - Prof. Dr. Magdy Abu Rayyan Hall</p>
                                           </section>
                                           <section className="links">
                                           <a href="/conference">Register</a>

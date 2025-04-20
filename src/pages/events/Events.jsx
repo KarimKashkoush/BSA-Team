@@ -1,6 +1,7 @@
 import "./events.css"
 import Footer from "../../components/footer/Footer"
 import reg from "../../assets/images/reg_open.png"
+
 export default function Events() {
       return (
             <>
@@ -38,6 +39,7 @@ export default function Events() {
 
                               <section className="box" data-aos="zoom-in-up">
                                     <img src={reg} alt="image-events" />
+                                    
                                     <section className="title">
                                           <section>
                                                 <h3>9th Conference</h3>

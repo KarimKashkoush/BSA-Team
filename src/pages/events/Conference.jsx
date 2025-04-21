@@ -75,7 +75,7 @@ export default function Conference() {
                   // إرسال الإيميل باستخدام EmailJS
                   await emailjs.send(
                         "service_ep8804u", // Service ID من EmailJS
-                        "template_g97l4zr", // Template ID من EmailJS
+                        "template_9ejgs0l", // Template ID من EmailJS
                         emailParams,
                         "8Hn79Fh0mTeeoN_Lb" // Public Key من EmailJS
                   );

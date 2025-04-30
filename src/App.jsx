@@ -44,7 +44,7 @@ function App() {
             <Route path="/joinTheTeam" element={<JoinTheTeam />} />
             <Route path="/events" element={<Events />} />
             <Route path="/scientificDayForm" element={<End />} />
-            <Route path="/conference" element={<Conference />} />
+            <Route path="/conference" element={<End />} />
           </Routes>
         </section>
       )}
